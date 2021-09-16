@@ -34,7 +34,7 @@ crossorigin=""></script>
     <main id="mapid"></main>
 
     <script>
-      // los datos para el mapa
+      // los datos para el mapa.  Es un array de objetos
       var datos = [
        {
          "titulo": "Bogotá (la desmesura, a Melville)",
@@ -96,7 +96,9 @@ crossorigin=""></script>
           var texto = "Título: " + dato.autor + "<br> Fecha: " + dato.fecha + "<br> Lugar: " + dato.lugar + "<br>"
           //Html para la imagen
           var imagen = "<img class='thumb' src='" + dato.thumbnail + "'/>"
+          //unimos el texto con la imagen
           var popup = texto + imagen
+          //Agregamos el marcador y el popup al mapa
           L.marker([dato.lat, dato.lon]).addTo(mymap)
             .bindPopup(popup)
             .openPopup();
