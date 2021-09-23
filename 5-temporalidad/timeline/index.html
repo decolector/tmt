@@ -1,0 +1,98 @@
+<!doctype html>
+<html>
+<head>
+  <title>Timeline</title>
+  <script type="text/javascript" src="https://unpkg.com/vis-timeline@latest/standalone/umd/vis-timeline-graph2d.min.js"></script>
+  <link href="https://unpkg.com/vis-timeline@latest/styles/vis-timeline-graph2d.min.css" rel="stylesheet" type="text/css" />
+  <style type="text/css">
+    #visualization {
+      width: 600px;
+      height: 400px;
+      border: 1px solid lightgray;
+    }
+  </style>
+</head>
+<body>
+<div id="visualization"></div>
+<script type="text/javascript">
+  // DOM element where the Timeline will be attached
+  var container = document.getElementById('visualization');
+
+  // Create a DataSet (allows two way data-binding)
+  var items = new vis.DataSet(
+  [
+ {
+   "start": "1954-11-05T00:00:00Z",
+   "content": "Madrid"
+ },
+ {
+   "start": "1956-02-01T00:00:00Z",
+   "content": "Bogotá"
+ },
+ {
+   "start": "1952-02-20T00:00:00Z",
+   "content": "Madrid"
+ },
+ {
+   "start": "1957-02-21T00:00:00Z",
+   "content": "Madrid"
+ },
+ {
+   "start": "1957-02-22T00:00:00Z",
+   "content": "Madrid"
+ },
+ {
+   "start": "1975-02-27T00:00:00Z",
+   "content": "Madrid"
+ },
+ {
+   "start": "1957-03-07T00:00:00Z",
+   "content": "[Madrid]"
+ },
+ {
+   "start": "1957-03-10T00:00:00Z",
+   "content": "Madrid"
+ },
+ {
+   "start": "1957-04-04T00:00:00Z",
+   "content": "Madrid"
+ },
+ {
+   "start": "1963-01-29T00:00:00Z",
+   "content": "Caracas"
+ },
+ {
+   "start": "1963-02-04T00:00:00Z",
+   "content": "Caracas"
+ },
+ {
+   "start": "1964-10-27T00:00:00Z",
+   "content": "Madrid"
+ },
+ {
+   "start": "1964-11-16T00:00:00Z",
+   "content": "Madrid"
+ },
+ {
+   "start": "1964-11-18T00:00:00Z",
+   "content": "Madrid"
+ },
+ {
+   "start": "1965-01-13T00:00:00Z",
+   "content": "Madrid"
+ },
+ {
+   "start": "1965-01-25T00:00:00Z",
+   "content": "Madrid"
+ }
+]
+  );
+
+  // Configuration for the Timeline
+  var options = {};
+
+  // Create a Timeline
+  var timeline = new vis.Timeline(container, items, options);
+</script>
+</body>
+</html>
