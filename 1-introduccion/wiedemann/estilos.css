@@ -1,0 +1,76 @@
+body{
+    font-family: 'Open Sans', sans-serif;
+    font-size: 16px;
+}
+
+header{
+    text-align:center;
+    padding-top:1em;
+    padding-bottom: 1em;
+}
+
+nav>ul>li{
+    display: inline-block;
+
+}
+
+nav>ul>li>a{
+    padding-left: .6em;
+    padding-right: .6em;
+    padding-top: .4em;
+    padding-bottom: .4em;
+    /* una forma abreviada de padding */
+    /*padding: .4em .6em .4em .6em; */
+    color: black;
+    font-weight: 800;
+}
+
+/* 
+Pseudo elemento
+selecciona solo el elemento en su estado hover
+*/
+
+nav>ul>li>a:hover{
+    background: black;
+    color: white;
+}
+main{
+    margin-left: 20%;
+    margin-right: 20%;
+}
+
+
+img{
+    height: auto;
+    width: 100%;
+}
+
+.controles{
+    margin-top:3em;
+    width: 100%;
+    display: flex;
+    align-items:center;
+}
+
+.sig,.ant{
+    flex-grow:1;
+}
+
+.ant{
+    align-self: start;
+}
+
+.sig{
+    align-self: end;
+    text-align: right;
+}
+
+.info{
+    flex-grow:8;
+}
+
+.control{
+    font-size: 6em;
+    text-decoration: none;
+    color: black;
+}

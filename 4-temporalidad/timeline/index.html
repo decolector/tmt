@@ -1,0 +1,104 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <title>Timeline | Basic demo</title>
+
+  <style type="text/css">
+    body, html {
+      font-family: sans-serif;
+    }
+    .vis-item-content img {
+      max-width: 100px;
+    }
+  </style>
+
+  <script type="text/javascript" src="https://unpkg.com/vis-timeline@latest/standalone/umd/vis-timeline-graph2d.min.js"></script>
+  <link href="https://unpkg.com/vis-timeline@latest/styles/vis-timeline-graph2d.min.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+<div id="visualization"></div>
+
+<script type="text/javascript">
+  // DOM element where the Timeline will be attached
+  var container = document.getElementById('visualization');
+
+
+  // Create a DataSet (allows two way data-binding)
+  var items = new vis.DataSet(
+    [
+   {
+     "start": "1954-11-05T00:00:00Z",
+     "content": '<strong>Carta a mamá</strong><video controls="" autoplay="" name="media"><source src="https://ia601409.us.archive.org/3/items/hl2021-09-30/Hairy_Larry-2021_09-30-01_Freddys_Blues.mp3" type="audio/mpeg"></video>'
+   },
+   {
+     "start": "1956-02-01T00:00:00Z",
+     "content": "<img src='https://badac.uniandes.edu.co/files/hd/mmc/MMC_COR_PER_1956_DOC001.jpg' />"
+   },
+   {
+     "start": "1952-02-20T00:00:00Z",
+     "content": "<img src='https://badac.uniandes.edu.co/files/hd/mmc/MMC_COR_PER_1957_DOC003_FOL002r.jpg' />"
+   },
+   {
+     "start": "1957-02-21T00:00:00Z",
+     "content": "<img src='https://badac.uniandes.edu.co/files/hd/mmc/MMC_COR_PER_1957_DOC004.jpg' />"
+   },
+   {
+     "start": "1957-02-22T00:00:00Z",
+     "content": "<img src='https://badac.uniandes.edu.co/files/hd/mmc/MMC_COR_PER_1957_DOC005_FOL001v.jpg' />"
+   },
+   {
+     "start": "1975-02-27T00:00:00Z",
+     "content": "<img src='https://badac.uniandes.edu.co/files/hd/mmc/MMC_COR_PER_1957_DOC006_FOL003r.jpg' />"
+   },
+   {
+     "start": "1957-03-07T00:00:00Z",
+     "content": "<img src='https://badac.uniandes.edu.co/files/hd/mmc/MMC_COR_PER_1957_DOC007_FOL001r.jpg' />"
+   },
+   {
+     "start": "1957-03-10T00:00:00Z",
+     "content": "<img src='https://badac.uniandes.edu.co/files/hd/mmc/MMC_COR_PER_1957_DOC008a.jpg' />"
+   },
+   {
+     "start": "1957-04-04T00:00:00Z",
+     "content": "<img src='https://badac.uniandes.edu.co/files/hd/mmc/MMC_COR_PER_1957_DOC009a.jpg' />"
+   },
+   {
+     "start": "1963-01-29T00:00:00Z",
+     "content": "<img src='https://badac.uniandes.edu.co/files/hd/mmc/MMC_COR_PER_1963_DOC002.jpg' />"
+   },
+   {
+     "start": "1963-02-04T00:00:00Z",
+     "content": "<img src='https://badac.uniandes.edu.co/files/hd/mmc/MMC_COR_PER_1963_DOC003_FOL002r.jpg' />"
+   },
+   {
+     "start": "1964-10-27T00:00:00Z",
+     "content": "<img src='https://badac.uniandes.edu.co/files/hd/mmc/MMC_COR_PER_1964_DOC002_FOL001v.jpg' />"
+   },
+   {
+     "start": "1964-11-16T00:00:00Z",
+     "content": "<img src='https://badac.uniandes.edu.co/files/hd/mmc/MMC_COR_PER_1964_DOC004_FOL001v.jpg' />"
+   },
+   {
+     "start": "1964-11-18T00:00:00Z",
+     "content": "<img src='https://badac.uniandes.edu.co/files/hd/mmc/MMC_COR_PER_1964_DOC005_FOL001v.jpg' />"
+   },
+   {
+     "start": "1965-01-13T00:00:00Z",
+     "content": "<img src='https://badac.uniandes.edu.co/files/hd/mmc/MMC_COR_PER_1965_DOC001_FOL001r.jpg' />"
+   },
+   {
+     "start": "1965-01-25T00:00:00Z",
+     "content": "<img src='https://badac.uniandes.edu.co/files/hd/mmc/MMC_COR_PER_1965_DOC010_FOL001v.jpg' />"
+   }
+  ]
+);
+
+  // Configuration for the Timeline
+  var options = {};
+
+  // Create a Timeline
+  var timeline = new vis.Timeline(container, items, options);
+</script>
+</body>
+</html>

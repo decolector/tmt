@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="Content-Language" content="es"/>
+        <title> Generador de haikus </title>
+
+        <style>
+          body{
+            text-align: center;
+            font-size: 16px;
+          }
+          header{
+            padding: 1.6em;
+          }
+          main{
+            margin:0 auto;/* truco para centrar divisiones */
+            width: 960px;
+          }
+          h1{
+          	font-family: Georgia, serif; ;
+          	font-size: 36px;
+          }
+
+          #haiku{
+          	display: block;
+          	margin: 10px;
+          	font-family: brawler;
+          	font-size: 3.6em;
+            line-height: 1.7em;
+            margin: 2em auto;
+            padding: 2em;
+            border: 2px dashed cyan;
+          }
+          button{
+            border: none;
+            color: purple;
+            background-color: pink;
+            padding: 1em;
+            font-family: Helvetica, Arial, sans-serif;
+            font-size: 2.8em;
+            cursor: pointer;
+          }
+
+
+            button:hover {
+              background-color: fuchsia;
+            }
+        </style>
+    </head>
+
+    <body>
+      <header>
+        <h1>Generador de Haikus #1</h1>
+      </header>
+      <main>
+        <!-- este es el elemento en el que vamos a injectar el poema -->
+        <div id="haiku">
+        </div>
+
+        <form>
+            <!-- con este boton llamanos a la funcion generadora de poemas -->
+            <button type="button" onclick="generarHaiku()">Generar Haiku!!</button>
+        </form>
+      </main>
+
+
+
+        <script type="text/javascript">
+
+            // Esta función se llama cuando el documento se ha cargado
+            document.addEventListener('DOMContentLoaded', function(event){
+              console.log('Documento cargado')
+              generarHaiku()
+            })
+
+            //GENERADOR DE HAIKUS
+
+            // estas variables son listas de términos que vamos a usar
+            // mas adelante vamos a sacar elementos al azar para armar
+            // la composición
+
+            var objetos = [ "noches", "nubes", "hojas", "piedras", "gotas"]
+            var verbos = ["caen", "lloran", "flotan", "giran", "vuelan"]
+            var adjetivos = ["silenciosas", "vanidosas", "luminosas", "cadenciosas", "perezosas"]
+            var lugares = ["lago", "rio", "viento", "cielo", "patio"]
+            var reacciones = ["pienso", "lloro", "sonrío", "respiro", "miro"]
+            var caracter = ["hondo", "claro", "inmenso", "lento", "triste"]
+
+
+            function generarHaiku(){
+                console.log("Generando Haiku")
+
+                // creamos las líneas una por una, sacando elementos aleatorios de
+                // cada una de nuestras listas, y sumandolos con algunos
+                // artículos y conectores
+
+                var linea1 = "Las " + objetos[randomInt(0, objetos.length - 1)] + "  " + verbos[randomInt(0, verbos.length - 1)]
+
+                var linea2 = adjetivos[randomInt(0, adjetivos.length - 1)] + " en el " + lugares[randomInt(0, lugares.length - 1 )]
+
+                var linea3 = reacciones[randomInt(0, reacciones.length - 1 )] + " " + caracter[randomInt(0, caracter.length - 1 )]
+
+
+                //sumamos las líneas, el "<br>" es un salto de linea,
+                //es para dividir el haiku en 3 renglones separado
+
+                var haiku = linea1 + "<br>" + linea2 + "<br>" + linea3
+
+
+                //injectamos el resultado en la division con id = haiku01-resultado
+
+                document.getElementById("haiku").innerHTML = haiku
+            }
+
+            // ESTA FUNCION GENERA NUMEROS ALEATORIOS SEGUN LOS PARAMETROS
+            // ej: randomInt(0, 5);
+            // bajo: numero entero, el resultado no sera menor a este numero
+            // alto: numero entero, el resultado no sera mayor a este numero
+
+            function randomInt(bajo, alto){
+                var result = Math.floor((Math.random() * alto + 1) + bajo)
+                return result
+            }
+        </script>
+
+    </body>
+</html>

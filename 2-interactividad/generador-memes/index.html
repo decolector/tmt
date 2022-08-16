@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generador de memes</title>
+    <style>
+      body{
+        font-size: 16px;
+        font-family: Helvetica, Arial sans-serif;
+
+      }
+      header{
+        text-align: center;
+        margin: 4em 0 4em 0;
+        font-size: 2.5em;
+      }
+      .main-ui{
+        display: flex;
+        flex-direction: row;
+      }
+      .col-der{
+        flex-grow: 1;
+      }
+      .col-izq{
+        flex-grow:2;
+      }
+
+      .col-izq, .col-der{
+        border: 1px solid grey;
+        margin: 1em;
+      }
+
+      #imagen-meme{
+        width: 100%;
+      }
+      #texto-meme{
+        font-size: 4em;
+        text-align: center;
+      }
+      input,button{
+        font-size: 2em;
+        margin: 1em;
+        padding: .8em;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Generador de memes</h1>
+    </header>
+    <main class="main-ui">
+      <div class="col-der">
+        <div class="contenedor-meme">
+          <img id="imagen-meme" src="https://i.redd.it/pmf7ztkytz241.jpg" alt="Perrito chems">
+          <h2 id="texto-meme">Texto</h2>
+        </div>
+      </div>
+      <div class="col-izq">
+        <form>
+          <input id="entrada" type="text" placeholder="Texto de meme">
+          <button type="button" name="button" onclick="generarMeme()">Generar meme!</button>
+        </form>
+      </div>
+    </main>
+    <script type="text/javascript">
+      function generarMeme(){
+        var texto = document.getElementById('entrada').value
+        document.getElementById("texto-meme").innerHTML = texto
+        console.log(texto)
+      }
+    </script>
+  </body>
+</html>

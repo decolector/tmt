@@ -1,0 +1,58 @@
+body{
+  font-size: 16px;
+}
+h1{
+  font-family: Helvetica, Arial, sans-serif;
+  text-align: center;
+}
+
+.color-verde{
+  color: rgb(0,255,0);
+}
+
+#haiku{
+  font-size: 2em;
+  padding: 3em;
+  margin: 1em;
+  background-image: url(https://images.unsplash.com/photo-1494500764479-0c8f2919a3d8?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxleHBsb3JlLWZlZWR8Mnx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=60);
+  background-size: cover;
+  background-position: center;
+  color: white;
+}
+main{
+  margin: 0 auto;
+  width: 960px;
+  text-align: center;
+}
+button{
+  border: none;
+  padding: 1em;
+  font-size: 1.5em;
+  color: purple;
+  background-color: pink;
+  cursor: pointer;
+}
+button:hover{
+  background: linear-gradient(227deg, #1b51d7, #e11be3);
+  background-size: 400% 400%;
+
+  -webkit-animation: AnimationName 29s ease infinite;
+  -moz-animation: AnimationName 29s ease infinite;
+  animation: AnimationName 29s ease infinite;
+}
+
+@-webkit-keyframes AnimationName {
+  0%{background-position:0% 99%}
+  50%{background-position:100% 2%}
+  100%{background-position:0% 99%}
+}
+@-moz-keyframes AnimationName {
+  0%{background-position:0% 99%}
+  50%{background-position:100% 2%}
+  100%{background-position:0% 99%}
+}
+@keyframes AnimationName {
+  0%{background-position:0% 99%}
+  50%{background-position:100% 2%}
+  100%{background-position:0% 99%}
+}
