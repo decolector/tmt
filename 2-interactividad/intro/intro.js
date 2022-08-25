@@ -17,6 +17,13 @@ console.log(aficiones.length);
 //Obtener un elemento de la lista
 console.log(aficiones[0]);
 
+//agregar un elemento a la lista, en la última posición
+aficiones.push('leer');
+
+//eliminar el último elemento de la lista
+//esta función no requiere parámetros para funcionar
+//pero se dejan vacíos
+aficiones.pop();
 
 //Objeto
 

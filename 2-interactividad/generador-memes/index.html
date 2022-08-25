@@ -37,11 +37,20 @@
       #texto-meme{
         font-size: 4em;
         text-align: center;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
       }
       input,button{
         font-size: 2em;
         margin: 1em;
         padding: .8em;
+      }
+      .contenedor-meme{
+        position: relative;
+        width: 100%;
+        height: 100%;
       }
     </style>
   </head>
@@ -50,13 +59,13 @@
       <h1>Generador de memes</h1>
     </header>
     <main class="main-ui">
-      <div class="col-der">
+      <div class="col-izq">
         <div class="contenedor-meme">
           <img id="imagen-meme" src="https://i.redd.it/pmf7ztkytz241.jpg" alt="Perrito chems">
           <h2 id="texto-meme">Texto</h2>
         </div>
       </div>
-      <div class="col-izq">
+      <div class="col-der">
         <form>
           <input id="entrada" type="text" placeholder="Texto de meme">
           <button type="button" name="button" onclick="generarMeme()">Generar meme!</button>
@@ -64,9 +73,13 @@
       </div>
     </main>
     <script type="text/javascript">
+      //Función para generar meme
       function generarMeme(){
+        //primero se obtiene el valor del elemento input
         var texto = document.getElementById('entrada').value
+        //se inserta el texto en el elemento #texto-meme
         document.getElementById("texto-meme").innerHTML = texto
+        //se muestra por la consola, por si acaso
         console.log(texto)
       }
     </script>
