@@ -12,27 +12,18 @@
       }
       header{
         text-align: center;
-        margin: 4em 0 4em 0;
-        font-size: 2.5em;
+        font-size: 2em;
+        height: 10%;
       }
-      .main-ui{
+      main{
         display: flex;
-        flex-direction: row;
-      }
-      .col-der{
-        flex-grow: 1;
-      }
-      .col-izq{
-        flex-grow:2;
-      }
-
-      .col-izq, .col-der{
-        border: 1px solid grey;
-        margin: 1em;
+        flex-direction: column;
+        align-items: center;
+        height: 90%;
       }
 
       #imagen-meme{
-        width: 100%;
+        height: 100%;
       }
       #texto-meme{
         font-size: 4em;
@@ -43,14 +34,15 @@
         right: 0;
       }
       input,button{
-        font-size: 2em;
-        margin: 1em;
-        padding: .8em;
+        font-size: 1.6em;
+        margin: .8em;
+        padding: .4em;
       }
-      .contenedor-meme{
+      #contenedor-meme{
         position: relative;
-        width: 100%;
-        height: 100%;
+        width: 70%;
+        height: 60vh;
+        text-align: center;
       }
     </style>
   </head>
@@ -58,29 +50,55 @@
     <header>
       <h1>Generador de memes</h1>
     </header>
-    <main class="main-ui">
-      <div class="col-izq">
-        <div class="contenedor-meme">
-          <img id="imagen-meme" src="https://i.redd.it/pmf7ztkytz241.jpg" alt="Perrito chems">
+    <main>
+        <div id="contenedor-meme">
+          <img id="imagen-meme" src="https://i.kym-cdn.com/photos/images/newsfeed/001/658/936/411.jpg" alt="Perrito chems">
           <h2 id="texto-meme">Texto</h2>
         </div>
-      </div>
-      <div class="col-der">
         <form>
           <input id="entrada" type="text" placeholder="Texto de meme">
           <button type="button" name="button" onclick="generarMeme()">Generar meme!</button>
         </form>
-      </div>
     </main>
     <script type="text/javascript">
+      /* Lista de imágenes */
+
+      lista_imgs = [
+        "https://memetemplatehouse.com/wp-content/uploads/2021/05/dog-typing-on-laptop-in-an-apocalypse-meme-template.jpg",
+        "https://i.kym-cdn.com/photos/images/newsfeed/001/658/936/411.jpg",
+        "https://i.kym-cdn.com/photos/images/original/000/406/325/b31.jpg"
+      ]
+
       //Función para generar meme
       function generarMeme(){
         //primero se obtiene el valor del elemento input
         var texto = document.getElementById('entrada').value
         //se inserta el texto en el elemento #texto-meme
         document.getElementById("texto-meme").innerHTML = texto
-        //se muestra por la consola, por si acaso
+        //se genera un número aleatorio entre cero y
+        //la longitud de la lista de imágenes menos uno.
+        var numero = getRandomInt(0, lista_imgs.length - 1)
+        //con el numero generado, se selecciona una url
+        //de la lista de imágenes
+        var img_src = lista_imgs[numero]
+        //se inserta la url en el atributo 'src' de la imagen
+        document.getElementById("imagen-meme").setAttribute("src", img_src)
         console.log(texto)
+      }
+      /**
+       * Función para generar números aleatorios
+       * el primer parámetro es el número mínimo
+       * el segundo parámetro es el número máximo
+       * Tomado de:
+       * https://gist.github.com/n9986/3737028
+      */
+      
+      /**
+       * Returns a random integer between min and max
+       * Using Math.round() will give you a non-uniform distribution!
+       */
+      function getRandomInt (min, max) {
+          return Math.floor(Math.random() * (max - min + 1)) + min;
       }
     </script>
   </body>
