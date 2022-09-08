@@ -3,12 +3,9 @@
   <head>
     <meta charset="utf-8">
     <title>Mapa de Gustavo Zalamea</title>
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
-  integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
-  crossorigin=""/>
-  <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
-integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
-crossorigin=""></script>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.8.0/dist/leaflet.css" integrity="sha512-hoalWLoI8r4UszCkZ5kL8vayOGVae1oxXe/2A4AO6J9+580uKHDO3JdHb7NzwwzK5xr/Fs0W40kiNHxM9vyTtQ==" crossorigin="" />
+    <script src="https://unpkg.com/leaflet@1.8.0/dist/leaflet.js" integrity="sha512-BB3hKbKWOc9Ez/TAwyWxNXeoV9c1v6FIeYiBieIWkpLjauysF18NzgR1MBNBXf8/KABdlkX68nAhlwcDFLGPCQ==" crossorigin=""></script>
+    
 
 <style>
   body{
@@ -33,7 +30,7 @@ crossorigin=""></script>
   <body>
     <header> <h1>Mapa de las postales de Gustavo Zalamea</h1></header>
 
-    <main id="mapid"></main>
+    <main id="mapa"></main>
 
     <script>
       // los datos para el mapa.  Es un array de objetos
@@ -80,15 +77,13 @@ crossorigin=""></script>
  }
 ]
       // Configuración del mapa
-      var mymap = L.map('mapid').setView([4.6046079, -74.0904356], 13);
+      var mymap = L.map('mapa').setView([4.6046079, -74.0904356], 13);
 
-        L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
-            attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+        L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
             maxZoom: 18,
-            id: 'mapbox.mapbox-streets-v8',
             tileSize: 512,
-            zoomOffset: -1,
-            accessToken: 'pk.eyJ1IjoiY21hcnQiLCJhIjoid21wM2hwVSJ9.pNyWDKw-jAgMMFWCh4CLVA'
+            zoomOffset: -1
         }).addTo(mymap);
 
         //Iteramos por los datos, creando un punto y un popup por elemento
@@ -102,6 +97,7 @@ crossorigin=""></script>
           //Agregamos el marcador y el popup al mapa
           L.marker([dato.lat, dato.lon]).addTo(mymap)
             .bindPopup(popup)
+            //esto abre el popup
             .openPopup();
         });
 
