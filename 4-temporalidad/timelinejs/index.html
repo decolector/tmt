@@ -1,0 +1,27 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/timeline.css">
+    <script type="text/javascript" src="js/timeline.js"></script>
+    <title>Timeline</title>
+</head>
+<body>
+    <!-- El elemento donde se va a crear la línea de tiempo-->
+    <div id="timeline-embed"></div>
+    <!--El script -->
+    <script>
+        //el objeto json con las opciones
+          var options = {
+            hash_bookmark: false,
+            initial_zoom: 5
+        }
+        //Aquí se crea la lína de tiempo, usando la tabla de google
+        var timeline = new TL.Timeline('timeline-embed',
+                                 'https://docs.google.com/spreadsheets/d/e/2PACX-1vQwD6dunXnioTm8gX2k6XDTak7gIxxRHZh0Sz97y1h3G8yg592kPbphtdDg2QpoGjlOb1HBSeo2huIE/pubhtml',
+                                 options);
+    </script>
+</body>
+</html>
+
