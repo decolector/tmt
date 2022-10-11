@@ -1,104 +1,107 @@
 <!DOCTYPE HTML>
 <html>
-<head>
-  <title>Timeline | Basic demo</title>
-
-  <style type="text/css">
-    body, html {
-      font-family: sans-serif;
-    }
-    .vis-item-content img {
-      max-width: 100px;
-    }
-  </style>
-
-  <script type="text/javascript" src="https://unpkg.com/vis-timeline@latest/standalone/umd/vis-timeline-graph2d.min.js"></script>
-  <link href="https://unpkg.com/vis-timeline@latest/styles/vis-timeline-graph2d.min.css" rel="stylesheet" type="text/css" />
-</head>
-
-<body>
-<div id="visualization"></div>
-
-<script type="text/javascript">
-  // DOM element where the Timeline will be attached
-  var container = document.getElementById('visualization');
+  <head>
+    <title>Timeline | Basic demo</title>
 
 
-  // Create a DataSet (allows two way data-binding)
-  var items = new vis.DataSet(
-    [
-   {
-     "start": "1954-11-05T00:00:00Z",
-     "content": '<strong>Carta a mamá</strong><video controls="" autoplay="" name="media"><source src="https://ia601409.us.archive.org/3/items/hl2021-09-30/Hairy_Larry-2021_09-30-01_Freddys_Blues.mp3" type="audio/mpeg"></video>'
-   },
-   {
-     "start": "1956-02-01T00:00:00Z",
-     "content": "<img src='https://badac.uniandes.edu.co/files/hd/mmc/MMC_COR_PER_1956_DOC001.jpg' />"
-   },
-   {
-     "start": "1952-02-20T00:00:00Z",
-     "content": "<img src='https://badac.uniandes.edu.co/files/hd/mmc/MMC_COR_PER_1957_DOC003_FOL002r.jpg' />"
-   },
-   {
-     "start": "1957-02-21T00:00:00Z",
-     "content": "<img src='https://badac.uniandes.edu.co/files/hd/mmc/MMC_COR_PER_1957_DOC004.jpg' />"
-   },
-   {
-     "start": "1957-02-22T00:00:00Z",
-     "content": "<img src='https://badac.uniandes.edu.co/files/hd/mmc/MMC_COR_PER_1957_DOC005_FOL001v.jpg' />"
-   },
-   {
-     "start": "1975-02-27T00:00:00Z",
-     "content": "<img src='https://badac.uniandes.edu.co/files/hd/mmc/MMC_COR_PER_1957_DOC006_FOL003r.jpg' />"
-   },
-   {
-     "start": "1957-03-07T00:00:00Z",
-     "content": "<img src='https://badac.uniandes.edu.co/files/hd/mmc/MMC_COR_PER_1957_DOC007_FOL001r.jpg' />"
-   },
-   {
-     "start": "1957-03-10T00:00:00Z",
-     "content": "<img src='https://badac.uniandes.edu.co/files/hd/mmc/MMC_COR_PER_1957_DOC008a.jpg' />"
-   },
-   {
-     "start": "1957-04-04T00:00:00Z",
-     "content": "<img src='https://badac.uniandes.edu.co/files/hd/mmc/MMC_COR_PER_1957_DOC009a.jpg' />"
-   },
-   {
-     "start": "1963-01-29T00:00:00Z",
-     "content": "<img src='https://badac.uniandes.edu.co/files/hd/mmc/MMC_COR_PER_1963_DOC002.jpg' />"
-   },
-   {
-     "start": "1963-02-04T00:00:00Z",
-     "content": "<img src='https://badac.uniandes.edu.co/files/hd/mmc/MMC_COR_PER_1963_DOC003_FOL002r.jpg' />"
-   },
-   {
-     "start": "1964-10-27T00:00:00Z",
-     "content": "<img src='https://badac.uniandes.edu.co/files/hd/mmc/MMC_COR_PER_1964_DOC002_FOL001v.jpg' />"
-   },
-   {
-     "start": "1964-11-16T00:00:00Z",
-     "content": "<img src='https://badac.uniandes.edu.co/files/hd/mmc/MMC_COR_PER_1964_DOC004_FOL001v.jpg' />"
-   },
-   {
-     "start": "1964-11-18T00:00:00Z",
-     "content": "<img src='https://badac.uniandes.edu.co/files/hd/mmc/MMC_COR_PER_1964_DOC005_FOL001v.jpg' />"
-   },
-   {
-     "start": "1965-01-13T00:00:00Z",
-     "content": "<img src='https://badac.uniandes.edu.co/files/hd/mmc/MMC_COR_PER_1965_DOC001_FOL001r.jpg' />"
-   },
-   {
-     "start": "1965-01-25T00:00:00Z",
-     "content": "<img src='https://badac.uniandes.edu.co/files/hd/mmc/MMC_COR_PER_1965_DOC010_FOL001v.jpg' />"
-   }
-  ]
-);
+    <link href="https://unpkg.com/vis-timeline@latest/styles/vis-timeline-graph2d.min.css" rel="stylesheet" type="text/css" />
 
-  // Configuration for the Timeline
-  var options = {};
+    <script type="text/javascript" src="https://unpkg.com/vis-timeline@latest/standalone/umd/vis-timeline-graph2d.min.js"></script>
 
-  // Create a Timeline
-  var timeline = new vis.Timeline(container, items, options);
-</script>
-</body>
+    <style type="text/css">
+      body, html {
+        font-family: sans-serif;
+      }
+      .vis-item-content img {
+        max-width: 100px;
+      }
+    </style>
+
+  </head>
+
+  <body>
+    <div id="visualization"></div>
+
+    <script type="text/javascript">
+      // DOM element where the Timeline will be attached
+      var container = document.getElementById('visualization');
+
+
+      // Create a DataSet (allows two way data-binding)
+      var items = new vis.DataSet(
+        [
+ {
+   "start": "1954-11-05T00:00:00Z",
+   "content": "<div><h5>María mercedes Carranza</h5><p>texto</p><a href='https://badac.uniandes.edu.co/files/hd/mmc/MMC_COR_PER_1954_DOC002_FOL001r.jpg'><img src='https://badac.uniandes.edu.co/files/hd/mmc/MMC_COR_PER_1954_DOC002_FOL001r.jpg' alt=''></a></div>"
+ },
+ {
+   "start": "1956-02-01T00:00:00Z",
+   "content": "<div><h5>Álvaro Coronado</h5><p>Carta de Álvaro Coronado a su hija, Rosa Coronado, en respuesta a una foto enviada de la familia Carranza en España. Resalta a María Mercedes y habla de ella como graciosa y como una eventual linda muchacha. Fechada en febrero de 1956.</p><a href='https://badac.uniandes.edu.co/files/hd/mmc/MMC_COR_PER_1956_DOC001.jpg'><img src='https://badac.uniandes.edu.co/files/hd/mmc/MMC_COR_PER_1956_DOC001.jpg' alt=\''></a></div>"
+ },
+ {
+   "start": "1952-02-20T00:00:00Z",
+   "content": "<div><h5>María Mercedes Carranza</h5><p>Carta de María Mercedes Carranza a su madre, Rosa Coronado, en que le cuenta que la extraña. Informa que su padre irá a Córdoba y Zaragoza la próxima semana, que piensa llevarla a Santiago de Compostela y luego a Sevilla en semana santa. Cuenta que fue al cine con su tía, las actividades de su padre, envía recuerdos a sus tíos y primos y le pide que le cuente de su viaje en barco. Fechada el 20 de febrero de 1957.</p><a href='https://badac.uniandes.edu.co/files/hd/mmc/MMC_COR_PER_1957_DOC003_FOL002r.jpg'><img src='https://badac.uniandes.edu.co/files/hd/mmc/MMC_COR_PER_1957_DOC003_FOL002r.jpg' alt=\''></a></div>"
+ },
+ {
+   "start": "1957-02-21T00:00:00Z",
+   "content": "<div><h5>María Mercedes Carranza</h5><p>Carta de María Mercedes Carranza a su madre, Rosa Coronado, donde le cuenta que no fue a estudiar y tiene un problema con Madame Stulza. Anuncia que irán a recogerla a Barcelona con su padre y que éste se va el martes a Córdoba. Fechada el 21 de febrero de 1957.</p><a href='https://badac.uniandes.edu.co/files/hd/mmc/MMC_COR_PER_1957_DOC004.jpg'><img src='https://badac.uniandes.edu.co/files/hd/mmc/MMC_COR_PER_1957_DOC004.jpg' alt=\''></a></div>"
+ },
+ {
+   "start": "1957-02-22T00:00:00Z",
+   "content": "<div><h5>Mariía Mercedes Carranza</h5><p>Carta de María Mercedes Carranza a su madre, Rosa Coronado, donde agradece el envío de una carta. Fechada el 22 de febrero de 1957.</p><a href='https://badac.uniandes.edu.co/files/hd/mmc/MMC_COR_PER_1957_DOC005_FOL001v.jpg'><img src='https://badac.uniandes.edu.co/files/hd/mmc/MMC_COR_PER_1957_DOC005_FOL001v.jpg' alt=\''></a></div>"
+ },
+ {
+   "start": "1975-02-27T00:00:00Z",
+   "content": "<div><h5>María Mercedes Carranza</h5><p>Carta de María Mercedes Carranza a su madre, Rosa Coronado, en que narra la visita con su padre al Bazar, su rendimiento en el colegio y una reunión de almuerzo con la familia Panero. Fechada el 27 de febrero de 1957.</p><a href='https://badac.uniandes.edu.co/files/hd/mmc/MMC_COR_PER_1957_DOC006_FOL003r.jpg'><img src='https://badac.uniandes.edu.co/files/hd/mmc/MMC_COR_PER_1957_DOC006_FOL003r.jpg' alt=\''></a></div>"
+ },
+ {
+   "start": "1957-03-07T00:00:00Z",
+   "content": "<div><h5>María Mercedes Carranza</h5><p>Carta de María Mercedes Carranza a su madre, Rosa Coronado, en que cuenta lo mucho que la extraña y la compañía que ha representado su padre. Informa su rendimiento en el colegio. Fechada el 07 de marzo de 1957.</p><a href='https://badac.uniandes.edu.co/files/hd/mmc/MMC_COR_PER_1957_DOC007_FOL001r.jpg'><img src='https://badac.uniandes.edu.co/files/hd/mmc/MMC_COR_PER_1957_DOC007_FOL001r.jpg' alt=\''></a></div>"
+ },
+ {
+   "start": "1957-03-10T00:00:00Z",
+   "content": "<div><h5>[María Mercedes Carranza]</h5><p>Carta de María Mercedes Carranza a su madre, Rosa Coronado,  en que cuenta su visita a la casa de los Hierros, el viaje que hará su padre a Zaragoza y su lectura de tres cuentos. Fechada el  10 de marzo de 1957.</p><a href='https://badac.uniandes.edu.co/files/hd/mmc/MMC_COR_PER_1957_DOC008a.jpg'><img src='https://badac.uniandes.edu.co/files/hd/mmc/MMC_COR_PER_1957_DOC008a.jpg' alt=\''></a></div>"
+ },
+ {
+   "start": "1957-04-04T00:00:00Z",
+   "content": "<div><h5>María Mercedes Carranza</h5><p>Carta de María Mercedes Carranza a su madre, Rosa Coronado, donde le cuenta cómo fue su viaje a Córdoba y le dice que la espera el jueves. Fechada el 4 de abril de 1952.</p><a href='https://badac.uniandes.edu.co/files/hd/mmc/MMC_COR_PER_1957_DOC009a.jpg'><img src='https://badac.uniandes.edu.co/files/hd/mmc/MMC_COR_PER_1957_DOC009a.jpg' alt=\''></a></div>"
+ },
+ {
+   "start": "1963-01-29T00:00:00Z",
+   "content": "<div><h5>[María Mercedes Carranza]</h5><p>Carta de María Mercedes Carranza a su madre donde le dice que estuvo donde su abuelo y lo encontró muy bien de salud. También le cuenta que le regalaron un perfume y que la extraña mucho. Fechada el 29 de enero de 1963.</p><a href='https://badac.uniandes.edu.co/files/hd/mmc/MMC_COR_PER_1963_DOC002.jpg'><img src='https://badac.uniandes.edu.co/files/hd/mmc/MMC_COR_PER_1963_DOC002.jpg' alt=\''></a></div>"
+ },
+ {
+   "start": "1963-02-04T00:00:00Z",
+   "content": "<div><h5>[María Mercedes Carranza]</h5><p>Carta de María Mercedes Carranza a su madre en que le cuenta que Celia no ha puesto problema y que hablando francés con Otto de Sola resaltó que su acento era \'Lyonnais\''. Cuenta que Rómulo los recibirá al día siguiente (martes) y que el viernes almorzarán en el Hotel con los \'Coronaos\''. Fechada el 4 de febrero de 1963.</p><a href='https://badac.uniandes.edu.co/files/hd/mmc/MMC_COR_PER_1963_DOC003_FOL002r.jpg'><img src='https://badac.uniandes.edu.co/files/hd/mmc/MMC_COR_PER_1963_DOC003_FOL002r.jpg' alt=\''></a></div>"
+ },
+ {
+   "start": "1964-10-27T00:00:00Z",
+   "content": "<div><h5>María Mercedes Carranza</h5><p>Carta de María Mercedes a su madre en la que cuenta que se siente la mujer más afortunada por encontrar un autógrafo de Manuel Machado en un libro de poesías. Fechada el 27 de octubre de 1964.</p><a href='https://badac.uniandes.edu.co/files/hd/mmc/MMC_COR_PER_1964_DOC002_FOL001v.jpg'><img src='https://badac.uniandes.edu.co/files/hd/mmc/MMC_COR_PER_1964_DOC002_FOL001v.jpg' alt=\''></a></div>"
+ },
+ {
+   "start": "1964-11-16T00:00:00Z",
+   "content": "<div><h5>María Mercedes Carranza</h5><p>Carta de María Mercedes Carranza a su madre donde le cuenta que se siente muy preocupada porque no sabe nada de ella ni de su familia e informa sobre Patricia y César. También le cuenta que no ha tocado un libro aún cuando está en época de exámenes, que en la universidad faltan siempre los profesores y se puede aprobar sin asistir. Fechada el 16 de noviembre de 1964.</p><a href='https://badac.uniandes.edu.co/files/hd/mmc/MMC_COR_PER_1964_DOC004_FOL001v.jpg'><img src='https://badac.uniandes.edu.co/files/hd/mmc/MMC_COR_PER_1964_DOC004_FOL001v.jpg' alt=\''></a></div>"
+ },
+ {
+   "start": "1964-11-18T00:00:00Z",
+   "content": "<div><h5>María Mercedes Carranza</h5><p>Carta de María Mercedes Carranza a su madre en que se alegra de la visita de su madre  Caracas. Cuenta que en  pocos días tiene su primer examen y no ha leído nada, solo a J.Antonio. También le dice que se siente un poco sola y le pregunta cómo se porta su padre. Fechada el 18 de noviembre de 1964.</p><a href='https://badac.uniandes.edu.co/files/hd/mmc/MMC_COR_PER_1964_DOC005_FOL001v.jpg'><img src='https://badac.uniandes.edu.co/files/hd/mmc/MMC_COR_PER_1964_DOC005_FOL001v.jpg' alt=\''></a></div>"
+ },
+ {
+   "start": "1965-01-13T00:00:00Z",
+   "content": "<div><h5>María Mercedes Carranza</h5><p>Carta de María Mercedes Carranza a su madre, Rosa Colorado, contándole cómo le ha ido en Madrid, sobre las amistades que le han ayudado y diferentes temas. Le cuenta que ha peleado con Juan Luis Panero y que se encuentra triste. Le pide consejos sobre la situación. Fechada el 13 de enero de 1965.</p><a href='https://badac.uniandes.edu.co/files/hd/mmc/MMC_COR_PER_1965_DOC001_FOL001r.jpg'><img src='https://badac.uniandes.edu.co/files/hd/mmc/MMC_COR_PER_1965_DOC001_FOL001r.jpg' alt=\''></a></div>"
+ },
+ {
+   "start": "1965-01-25T00:00:00Z",
+   "content": "<div><h5>María Mercedes Carranza</h5><p>Carta de María Mercedes Carranza a su madre, Rosita Colorado de Carranza, en la que le cuenta que han sido duros para ella y ha actuado de manera impulsiva. Le pide perdón y le recuerda que se ha enamorado de Juan Luis. Le habla sobre la equivocación que ha cometido. Le pide que le escriba. Fechada el 25 de enero de 1965.</p><a href='https://badac.uniandes.edu.co/files/hd/mmc/MMC_COR_PER_1965_DOC010_FOL001v.jpg'><img src='https://badac.uniandes.edu.co/files/hd/mmc/MMC_COR_PER_1965_DOC010_FOL001v.jpg' alt=\''></a></div>"
+ }
+]
+      );
+
+      // Configuration for the Timeline
+      var options = {};
+
+      // Create a Timeline
+      var timeline = new vis.Timeline(container, items, options);
+    </script>
+  </body>
 </html>
