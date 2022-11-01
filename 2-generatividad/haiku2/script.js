@@ -25,6 +25,7 @@
       console.log(haiku)
     }
     function randomInt(bajo, alto){
-      var resultado = Math.floor((Math.random() * alto + 1) + bajo)
-      return resultado
+        bajo = Math.ceil(bajo);
+        alto = Math.floor(alto);
+        return Math.floor(Math.random() * (alto - bajo + 1)) + bajo;
     }
