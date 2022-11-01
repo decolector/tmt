@@ -119,9 +119,11 @@
             // alto: numero entero, el resultado no sera mayor a este numero
 
             function randomInt(bajo, alto){
-                var result = Math.floor((Math.random() * alto + 1) + bajo)
-                return result
+                bajo = Math.ceil(bajo);
+                alto = Math.floor(alto);
+                return Math.floor(Math.random() * (alto - bajo + 1)) + bajo;
             }
+
         </script>
 
     </body>
