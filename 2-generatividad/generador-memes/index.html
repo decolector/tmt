@@ -97,9 +97,11 @@
        * Returns a random integer between min and max
        * Using Math.round() will give you a non-uniform distribution!
        */
-      function getRandomInt (min, max) {
-          return Math.floor(Math.random() * (max - min + 1)) + min;
-      }
+        function getRandomInt(bajo, alto){
+            bajo = Math.ceil(bajo);
+            alto = Math.floor(alto);
+            return Math.floor(Math.random() * (alto - bajo + 1)) + bajo;
+        }
     </script>
   </body>
 </html>
